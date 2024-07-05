@@ -1,0 +1,542 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="QuanLy.css" />
+    <link rel="stylesheet" href="TtinCaNhan.css" />
+    <link rel="stylesheet" href="QuanLyTk.css" />
+    <title>Document</title>
+</head>
+<body>
+    <div class="than">
+        
+        <div class="flex2">
+          <div class="flex-direction quanlytk">
+            <h2>Admin 3</h2>
+            <hr class="divider">
+            <a href="#" onclick="showForm('TrangChu')"
+            ><h4 style="color: black;" >Trang Chủ</h4></a>
+
+            <div class="accordion">
+              <div class="accordion-item">
+                  <div class="accordion-header" onclick="toggleAccordion(event)">
+                      <span class="icon">▽</span>
+                      <span class="title">Quản Lý</span>
+                  </div>
+                  <div class="accordion-content">
+                      <a href="#" class="groupTT" onclick="showForm('QuanLyTK')">Quản Lý Tài khoản</a>
+                      <a href="#" class="groupTT" onclick="showForm('QlySanPham')">Quản Lý Sản Phẩm</a>
+                      <a href="#" class="groupTT" onclick="showForm('QlyNhanVien')">Quản Lý Nhân Viên</a>
+                      <a href="#" class="groupTT" onclick="showForm('QlyHoaDon')">Quản Lý Hóa Đơn</a>
+                      <a href="#" class="groupTT" onclick="showForm('QlyMay')">Quản Lý Máy</a>
+                  </div>
+              </div>
+              <div class="accordion-item">
+                  <div class="accordion-header" onclick="toggleAccordion(event)">
+                      <span class="icon">▽</span>
+                      <span class="title">Thống Kê</span>
+                  </div>
+                  <div class="accordion-content">
+                      <a href="#" class="groupTT" onclick="showForm('QlyDanhThuMay')">Doanh Thu Từ Máy</a>
+                      <a href="#" class="groupTT" onclick="showForm('ThongKeLuongNV')">Thống kê lương nhân Viên</a>
+                     
+                  </div>
+              </div>
+              <a href="#" class="groupTT" style="color: black;" onclick="showForm('TtinCaNhan')">Thông tin cá nhân</a>
+          </div>
+          
+            
+          </div>
+          <div class="thongtin-group">
+            <form class="" id="TrangChu"> 
+              trangchu
+              </form>
+           
+            <form class="" id="QuanLyTK" style="display: none"> 
+                        <div class="left-container">
+                            <h3 class="title">Quản Lý Tài Khoản</h3>
+                            <h4 class="title">Danh Sách Tài Khoản:</h4>
+                        </div>
+                        <div class="right-container">
+                            <div class="action-container">
+                                <button id="create-account-btn" class="btn create-btn">Tạo Mới</button>
+                            </div>
+                            <div class="search-container">
+                                <label for="search-account">Tìm theo tên hoặc id</label>
+                                <input type="text" id="search-account">
+                            </div>
+                        </div>
+                    
+                                
+                    <div>
+                        <table class="account-table">  
+                            <thead>
+                                <tr>
+                                    <th>STT</th>
+                                    <th>Tên tài khoản</th>
+                                    <th>Số dư</th>
+                                    <th>Vai trò</th>
+                                    <th>Ngày tạo</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </form>
+                
+                <!-- Popup for creating new account -->
+                <div id="popup-create-account" class="popup">
+                    <div class="popup-content">
+                        <span class="close-btn">&times;</span>
+                        <h2>Tạo Mới Tài Khoản</h2>
+                        <form>
+                            <label for="new-account-name">Tên tài khoản</label>
+                            <input type="text" id="new-account-name">
+                            <label for="new-account-balance">Số dư</label>
+                            <input type="text" id="new-account-balance">
+                            <label for="new-account-role">Vai trò</label>
+                            <input type="text" id="new-account-role">
+                            <button type="button" id="save-account-btn" class="btn save-btn">Lưu</button>
+                        </form>
+                    </div>
+                </div>
+                
+
+            <form class="" id="QlySanPham" style="display: none">
+                <div>
+                <div class="left-container">
+                    <h3 class="title">Quản Lý Sản Phẩm</h3>
+                    <h4 class="title">Danh Sách Sản Phẩm</h4>
+                    <span class="sort">
+                        <select class="sort-select" id="sort-by-machine">
+                            <option value="SP0">Tất cả</option>                 
+                            <option value="SP1">Đơn giá</option>  
+                            <option value="SP2">Số lượng</option>        
+                            <option value="SP3">Số lượng bán</option>  
+                            <option value="SP4">Loại sản phẩm</option>   
+                        </select>
+                    </span>
+                </div>
+                <div  class="mid-container">  
+                    <input type="search" placeholder="search here" id="search-account">
+                </div>
+                <div class="right-container">
+                    <div class="action-container">
+                        <button id="create-account-btn" class="btn create-btn">Thêm</button>
+                    </div>
+                </div>
+            </div>
+                        
+            <div>
+                <table class="account-table">  
+                    <thead>
+                        <tr>
+                            <th>STT</th>
+                            <th>Tên sản phẩm</th>
+                            <th>Giá bán</th>
+                            <th>Phân Loại</th>
+                            <th>Mô tả</th>
+                            <th>Số Lượng</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            </form>        
+          
+            <form id="QlyNhanVien" style="display: none">
+                <div class="employee-container">
+                    <h2>Quản lý nhân viên</h2>
+                    <div class="employee-form-group">
+                        <label for="accountIdNew">Id tài khoản</label>
+                        <input type="text" id="accountIdNew">
+                        <label for="employeeNameNew">Tên nhân viên</label>
+                        <input type="text" id="employeeNameNew">
+                    </div>
+                    <div class="employee-form-group">
+                        <label for="salaryNew">Lương</label>
+                        <input type="text" id="salaryNew">
+                        <label for="phoneNew">Số điện thoại</label>
+                        <input type="text" id="phoneNew">
+                    </div>
+                    <div class="employee-form-group">
+                        <label for="addressNew">Địa chỉ</label>
+                        <input type="text" id="addressNew">
+                    </div>
+                    <div class="employee-buttons">
+                        <button id="searchNew">Search</button>
+                        <button id="addNew">Thêm</button>
+                        <button id="editNew">Sửa</button>
+                        <button id="deleteNew">Xoá</button>
+                    </div>
+                    <h3>Danh sách nhân viên</h3>
+                    <table class="employee-table">
+                        <thead>
+                            <tr>
+                                <th>Id</th>
+                                <th>Họ tên</th>
+                                <th>Id tài khoản</th>
+                                <th>Lương</th>
+                                <th>Số điện thoại</th>
+                                <th>Địa chỉ</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <!-- Data -->
+                        </tbody>
+                    </table>
+                </div>
+            </form>
+
+            <form id="QlyHoaDon" style="display: none">           
+                <div class="qlhd_main-content">
+                    <h2 class="qlhd_heading">Quản lý hóa đơn</h2>
+                    <button class="qlhd_add-button">+ Thêm mới</button>
+                    <h3 class="">Hóa đơn bán</h3>
+                    <div class="qlhd_filter-section">
+                        <div class="qlhd_left-section">
+                            <form class="qlhd_form">
+                                <h4>Lọc tìm kiếm</h4>
+                                <label for="tu-ngay" class="qlhd_label">Từ ngày:</label>
+                                <input type="date" id="tu-ngay" name="tu-ngay" class="qlhd_input">
+                                
+                                <label for="den-ngay" class="qlhd_label">Đến ngày:</label>
+                                <input type="date" id="den-ngay" name="den-ngay" class="qlhd_input">
+                                
+                                <label for="chon-may" class="qlhd_label">Chọn máy:</label>
+                                <select id="chon-may" name="chon-may" class="qlhd_select">
+                                    <option value="qlhd0">Tất cả</option>                 
+                                    <option value="qlhd1">...</option>  
+                                    
+                                    <!-- Options will be added here -->
+                                </select>
+                                
+                                <label for="ten-tai-khoan" class="qlhd_label">Tên tài khoản:</label>
+                                <input type="text" id="ten-tai-khoan" name="ten-tai-khoan" class="qlhd_input">
+                                
+                                <label for="nhan-vien" class="qlhd_label">Nhân viên:</label>
+                                <select id="nhan-vien" name="nhan-vien" class="qlhd_select">
+                                    <option value="qlhd_nv_0">Nhân viên 1</option>                 
+                                    <option value="qlhd_nv_ 1">...</option> 
+                                    <!-- Options will be added here -->
+                                </select>
+                                
+                                <div class="qlhd_buttons">
+                                    <button type="buttonz" class="qlhd_button qlhd_button-cancel">Cancel</button>
+                                    <button type="submitz" class="qlhd_button qlhd_button-search">Search</button>
+                                </div>
+                            </form>
+                        </div>
+                        <div class="qlhd_right-section">
+                            <table class="qlhd_table">
+                                <thead class="qlhd_thead">
+                                    <tr class="qlhd_tr">
+                                        <th class="qlhd_th">Id</th>
+                                        <th class="qlhd_th">Tài khoản</th>
+                                        <th class="qlhd_th">Máy</th>
+                                        <th class="qlhd_th">Ngày tạo</th>
+                                        <th class="qlhd_th">Nhân viên</th>
+                                        <th class="qlhd_th">Thanh toán</th>
+                                        <th class="qlhd_th">Trạng thái</th>
+                                        <th class="qlhd_th">Tổng tiền</th>
+                                    </tr>
+                                </thead>
+                                <tbody class="qlhd_tbody">
+                                    <!-- Table rows will be added here -->
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </form>
+            
+            <form class="qlm" id="QlyMay" style="display: none">
+                <div class="qlm_container">
+                    <div class="qlm_form-container">
+                        <h2 class="qlm_h2">QUẢN LÝ MÁY TÍNH</h2>
+                        <form class="qlm_form">
+                            <label for="ma-may" class="qlm_label">Mã máy:</label>
+                            <input type="text" id="ma-may" name="ma-may" class="qlm_input">
+                            
+                            <label for="ten-may" class="qlm_label">Tên máy:</label>
+                            <input type="text" id="ten-may" name="ten-may" class="qlm_input">
+                            
+                            <label for="gia-may" class="qlm_label">Giá máy:</label>
+                            <input type="text" id="gia-may" name="gia-may" class="qlm_input">
+                            
+                            <label for="loai-may" class="qlm_label">Loại máy:</label>
+                            <select id="loai-may" name="loai-may" class="qlm_select">
+                                <option value="qlm_1">Laptop</option>
+                                <option value="qlm_2">...</option>
+                            </select>
+                            
+                            <div class="qlm_buttons">
+                                <button type="button" class="qlm_button">Clean</button>
+                                <button type="button" class="qlm_button">Thêm máy</button>
+                                <button type="submit" class="qlm_button">Lưu</button>
+                                <button type="button" class="qlm_button">Xoá</button>
+                            </div>
+                        </form>
+                    </div>
+                    
+                    <div class="qlm_table-container">
+                        <label for="search" class="qlm_label">Tìm theo tên hoặc mã máy</label>
+                        <input type="text" id="search" name="search" class="qlm_input">
+                        
+                        <table class="qlm_table">
+                            <thead class="qlm_thead">
+                                <tr class="qlm_tr">
+                                    <th class="qlm_th">Mã máy</th>
+                                    <th class="qlm_th">Tên máy</th>
+                                    <th class="qlm_th">Giá tiền</th>
+                                    <th class="qlm_th">Loại máy</th>
+                                    <th class="qlm_th">Tình trạng</th>
+                                </tr>
+                            </thead>
+                            <tbody class="qlm_tbody">
+                                <!-- Table rows go here -->
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </form>
+            <form id="QlyDanhThuMay" style="display: none">
+                <h4 class="title">Thống kê thông tin từ máy</h4>
+                <div class="flex">
+                    <label for="start-date-machine">Từ Ngày:</label>
+                    <input type="datetime-local" id="start-date-machine" name="start-date-machine" value="0">
+            
+                    <label for="end-date-machine">Đến ngày:</label>
+                    <input type="datetime-local" id="end-date-machine" name="end-date-machine" value="0">
+            
+                    <label for="sort-by-machine">Sắp xếp theo:</label>
+                    <span class="sort">
+                        <select class="sort-select" id="sort-by-machine">
+                            <option value="0">Sắp Xếp Theo</option>                 
+                            <option value="1">Tăng Dần theo ngày</option>  
+                            <option value="2">Giảm Dần theo ngày</option>        
+                        </select>
+                    </span>
+                </div>
+            
+                <div class="flex tumay_kh">
+                    <label class="machine" for="machine">Từ máy:</label>
+                    <span> 
+                        <select class="machine-select" id="machine">
+                            <option value="0"></option>     
+                            <option value="1">Máy 1</option>         
+                            <option value="2">Máy 2</option>        
+                        </select>
+                    </span>
+            
+                    <label class="customer" for="customer">Khách hàng:</label>
+                    <span> 
+                        <select class="customer-select" id="customer">
+                            <option value="0"></option>     
+                            <option value="1">kh 01</option>         
+                            <option value="2">kh 02</option>        
+                        </select>
+                    </span>
+                </div>
+            
+                <div class="flex right">
+                    <button id="clear-btn-machine" class="btn clear-btn">Clear</button>
+                    <button id="filter-btn-machine" class="btn filter-btn">Lọc</button>
+                </div>
+            
+                <div>
+                    <table class="employee-table">  
+                        <thead>
+                            <tr>
+                                <th>ID</th>
+                                <th>Máy</th>
+                                <th>Bắt đầu từ</th>
+                                <th>Kết thúc từ</th>
+                                <th>Dùng bởi</th>
+                                <th>Tổng tiền</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </form>     
+
+            <form class="ThongKeLuongNV" id="ThongKeLuongNV" style="display: none">
+                <h4 class="title">Thống kê lương nhân viên</h4>
+                <div class="flex">
+                    <label for="start-date">Từ Ngày</label>
+                    <input type="datetime-local" id="start-date" name="start-date" value="0">
+                
+                    <label for="end-date">Đến ngày</label>
+                    <input type="datetime-local" id="end-date" name="end-date" value="0">
+                </div>
+                
+                <div class="flex">
+                    <label for="sort-by">Sắp xếp theo</label>
+                    <span class="sort">
+                        <select class="sort-select" id="sort-by">
+                            <option value="0">Sắp Xếp Theo</option>                 
+                            <option value="1">Lương Tăng Dần</option>  
+                            <option value="2">Lương Giảm Dần</option>        
+                        </select>
+                    </span>
+                    <label class="employee" for="employee">Nhân Viên</label>
+                    <span > 
+                        <select class="employee-select" id="employee">
+                            <option value="0"></option>     
+                            <option value="1">Nhân Viên 1</option>         
+                            <option value="2">Nhân Viên 2</option>        
+                        </select>
+                    </span>
+                </div>
+                
+                <div class="flex right">
+                    <button id="clear-btn" class="btn clear-btn">Clear</button>
+                    <button id="filter-btn" class="btn filter-btn">Lọc</button>
+                </div>
+                
+                <div>
+                    <table class="employee-table">  
+                        <thead>
+                            <tr>
+                                <th>Mã nhân viên</th>
+                                <th>Tên nhân viên</th>
+                                <th>Tên tài khoản</th>
+                                <th>Bắt đầu lúc</th>
+                                <th>Kết thúc lúc</th>
+                                <th>Tổng tiền</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>1</td>
+                                <td>Nhân viên 1</td>
+                                <td>TKnv01</td>
+                                <td>01/01/24 07:01:00</td>
+                                <td>01/01/24 11:01:00</td>
+                                <td>120,000 đ</td>
+                            </tr>
+                            <tr>
+                                <td>2</td>
+                                <td>Nhân viên 2</td>
+                                <td>TKnv02</td>
+                                <td>01/01/24 11:01:00</td>
+                                <td>01/01/24 16:01:00</td>
+                                <td>150,000 đ</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                
+            </form>
+
+            <form id="TtinCaNhan" style="display: none">
+              <h4 class="tieude">Thông Tin Người Dùng</h>
+                <div class="container">
+                    
+                    <div class="edit-info">
+                        <h2>Chỉnh sửa thông tin</h2>
+                        <form>
+                            <label for="fullname">Họ và tên:</label>
+                            <input type="text" id="fullname" name="fullname" value="admin">
+                            
+                            <label for="username">Tên tài khoản:</label>
+                            <input type="text" id="username" name="username" value="admin">
+                            
+                            <label for="salary">Lương tài khoản:</label>
+                            <input type="text" id="salary" name="salary" value="0">
+                            
+                            <label for="address">Địa chỉ nhà:</label>
+                            <input type="text" id="address" name="address" value="Trần Bình Trọng">
+                            
+                            <label for="phone">Số điện thoại liên lạc:</label>
+                            <input type="text" id="phone" name="phone" value="0123456789">
+                            
+                            <label for="other">Khác:</label>
+                            <textarea id="other" name="other">admin</textarea>
+                            
+                            <div class="buttons">
+                                <button type="button">Đổi mật khẩu</button>
+                                <button type="reset">Reset</button>
+                                <button type="submit">Lưu</button>
+                            </div>
+                        </form>
+                    </div>
+                    
+                    <div class="general-stats">
+                        <h2>Thống kê chung</h2>
+                        <label for="total-users">Tổng số người dùng:</label>
+                        <input type="text" id="total-users" name="total-users" value="0.00đ" readonly>
+                        
+                        <label for="total-recipients">Tổng số người nhận:</label>
+                        <input type="text" id="total-recipients" name="total-recipients" value="0.00đ" readonly>
+                        
+                        <label for="hours-worked">Số giờ làm tháng này:</label>
+                        <input type="text" id="hours-worked" name="hours-worked" value="0.00" readonly>
+                        
+                        <label for="salary-month">Số tiền lương tháng này:</label>
+                        <input type="text" id="salary-month" name="salary-month" value="0.00đ" readonly>
+                        
+                        <label for="orders-sold">Số đơn đã bán:</label>
+                        <input type="text" id="orders-sold" name="orders-sold" value="0" readonly>
+                    </div>
+                </div>
+            </form>
+          </div>
+          </div>
+        </div>
+        
+      </div>
+      <script src="script.js"></script>
+</body>
+</html>
